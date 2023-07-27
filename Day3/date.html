@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+    <h1 id="time"><script>document.getElementById("time").innerHTML=Date.now();</script></h1>
+    <button id="update" onclick="update()">Update</button>
+    <script>
+        function update(){
+            document.getElementById("time").innerHTML=Date.now();
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover2</title>
+    <style>
+        section{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+         div{
+            
+            border :10px solid red ;
+            width: 100px;
+            height: 100px;
+            align-content: center;
+            justify-content: center;
+        }
+        .box1{
+            background-color: black;
+
+        }
+        .box1:hover{
+            background-color: yellow;
+
+        }
+       
+
+    </style>
+</head>
+<body>
+    <section>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    </section>
+
+    <script>
+        const divElement =document.getElementsByClassName("box2");
+        divElement.addEventListener('mouseover',function(){divElement.style.backgroundColor = "#87ceb";});
+        divElement.addEventListener("mouseout",function(){divElement.style.backgroundColor = "#0000";});
+
+    </script>
+    
+</body>
+</html>
