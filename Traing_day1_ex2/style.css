@@ -11,7 +11,11 @@ aside {
     height: 100vh;
 }
 header img {
-    width: 100%
+    width: 13vw;
+    height: 50x;
+    align-self: center;
+    justify-self: center;
+    padding-left: 30px;
 }
 
 .right-side {
@@ -69,7 +73,7 @@ nav  {
     
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 a {
     text-decoration: none;
