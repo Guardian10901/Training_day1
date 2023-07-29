@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Promise</title>
+</head>
+<body>
+<button id="fetch_data" onclick="print_data()">Fetch data</button>
+<div id="house_list">
+    
+
+</div>
+</body>
+<script>
+
+    function print_data(){
+        let region={};
+    fetch("https://www.anapioficeandfire.com/api/houses").then(Response =>
+        Response.json()).then ((data) =>{data.forEach(element => {
+            if(element.region in region)
+            {
+                region[element.region].push(element.name);
+            }
+            else{
+                region[element.region]=[];
+                region[element.region].push(element.name);
+            }
+                
+        });
+
+            let c = document.getElementById("house_list");
+            let d = Object.keys(region);
+            
+            for (let j =0; j< d.length;j++)
+            {
+                let b = document.createElement("ul");
+                let y =document.createElement("h2");
+                y.innerText=d[j];
+                b.appendChild(y);
+                let n =region[d[j]];
+                console.log(n)
+                for(let i = 0;i< n.length;i++){
+                
+                    
+                    let a = document.createElement("li");
+                    a.innerText = n[i];
+                    
+                    b.appendChild(a);
+              
+            }
+                console.log(b)
+                
+                c.appendChild(b);
+           
+            }           
+
+           
+        })
+    }
+
+/**
+* Refer API Documentation https://anapioficeandfire.com/Documentation
+* Fetch the details of various houses in the Game of thrones universe
+*
+* Challenge 1
+* Fetch and list down the names of the houses when the user clicks on 'Fetch data' button
+*
+* Challenge 2
+* Improve the result of challenge 1 by grouping the houses based on region
+* *Hint* use promise chaining
+*/
+
+
+</script>
+</html>
